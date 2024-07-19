@@ -118,8 +118,8 @@ contract ConstantProduct {
         // x is the token received's reserve before the swap
         // dy = what is going to be returned to the user
         // x * y = k, where k is the constant product of the reserves
-        uint amountInWithFee = (_amountReceived * 997) / 1000;  // 0.3% fee applied
-        _amountReturned = (reserveReturned * amountInWithFee) / (reserveReceived + amountInWithFee);
+        uint amountReceivedWithFee = (_amountReceived * 997) / 1000;  // 0.3% fee applied
+        _amountReturned = (reserveReturned * amountReceivedWithFee) / (reserveReceived + amountReceivedWithFee);
 
         // Transfer returned token to the sender, depending on which token was received
         require(
@@ -129,7 +129,7 @@ contract ConstantProduct {
 
         // send owner the fee
         require(
-            tokenReceived.transfer(owner, _amountReceived - amountInWithFee), // this is the fee calculation
+            tokenReceived.transfer(owner, _amountReceived - amountReceivedWithFee), // this is the fee calculation
             "Transfer fee failed"
         );
 

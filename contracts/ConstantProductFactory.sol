@@ -2,6 +2,9 @@
 pragma solidity 0.8.24;
 import "./ConstantProduct.sol";
 
+
+/// @notice A simple implementation of a constant product AMM factory
+/// @author Emmanuel Douge - EmanCanCode@github
 contract ContantProductFactory {
     // ----- STATE VARIABLES ----- //
 
@@ -66,7 +69,7 @@ contract ContantProductFactory {
     }
 
     // ----- OWNER FUNCTIONS ----- //
-    
+
     function setFee(uint _fee) external onlyOwner() {
         fee = _fee;
     }

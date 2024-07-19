@@ -2,6 +2,9 @@
 pragma solidity 0.8.24;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
+
+/// @notice A simple implementation of a constant sum AMM with a 0.3% fee
+/// @author Emmanuel Douge - EmanCanCode@github
 contract ConstantSum {
     // ----- STATE VARIABLES ----- //
 

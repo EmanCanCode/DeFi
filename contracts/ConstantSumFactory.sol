@@ -2,6 +2,8 @@
 pragma solidity 0.8.24;
 import "./ConstantSum.sol";
 
+/// @notice A simple implementation of a constant sum AMM factory
+/// @author Emmanuel Douge - EmanCanCode@github
 contract ContantSumFactory {
     // ----- STATE VARIABLES ----- //
 
