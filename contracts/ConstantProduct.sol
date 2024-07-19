@@ -50,11 +50,17 @@ contract ConstantProduct {
         totalSupply -= _amount;
     }
 
+    /// @notice Updates the reserves of tokenA and tokenB
+    /// @param _reserveA The new reserve of tokenA
+    /// @param _reserveB The new reserve of tokenB
     function _update(uint _reserveA, uint _reserveB) private {
         reserveA = _reserveA;
         reserveB = _reserveB;
     }
 
+    /// @notice Calculates the square root of a number
+    /// @param _y The number to calculate the square root of
+    /// @return _z The square root of the number
     function _sqrt(uint256 _y) private pure returns (uint256 _z) {
         if (_y > 3) {
             _z = _y;
@@ -68,6 +74,10 @@ contract ConstantProduct {
         }
     }
 
+    /// @notice Returns the lower value of two numbers
+    /// @param _x The first number
+    /// @param _y The second number
+    /// @return The lower value of the two numbers
     function _min(uint256 _x, uint256 _y) private pure returns (uint256) {
         return _x <= _y ? _x : _y;
     }
